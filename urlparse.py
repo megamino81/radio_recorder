@@ -17,4 +17,4 @@ for l in output:
 v = lines[0]
 start = v.find("https")
 url = v[start:]
-print url
+print (url)

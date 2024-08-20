@@ -4,5 +4,5 @@ Radio recoder in Synology scheduler
 
 ## Morning special - EBS FM
 ```
-/volume1/Downloads/Records/ebs_record.sh EBS_morning_special 7200 /volume1/Downloads/Records/data > /volume1/Downloads/Records/ebs-log.txt 2>&1
+/volume1/downloads/records/ebs_record.sh EBS_morning_special 7200 /volume1/downloads/records/data > /volume1/downloads/records/ebs-log.txt 2>&1
 ```

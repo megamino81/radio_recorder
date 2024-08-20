@@ -5,4 +5,7 @@ SECS=3600
 OUT_DIR=data
 URL="http://serpent0.duckdns.org:8088/kbs2fm.pls"
 
-./radio_record.sh $NAME $SECS $OUT_DIR $URL
+ABS_PATH=$(readlink -f "$0")
+ABS_DIR=$(dirname "$ABS_PATH")
+
+$ABS_DIR/radio_record.sh $NAME $SECS $OUT_DIR $URL

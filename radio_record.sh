@@ -38,7 +38,7 @@ log SECS $SECS
 log URL $URL
 log RECORD_FILE $RECORD_FILE
 log LOG_FILE $LOG_FILE
-log CMD "$FFMPEG -i $URL -t $SECS -codec:a copy -vn -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE""
+log CMD "$FFMPEG -i $URL -t $SECS -vn -acodec mp3 -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE""
 log "-----"
 
 #$FFMPEG -i $URL -t $SECS -codec:a copy -vn -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE" >> $LOG_FILE 2>&1

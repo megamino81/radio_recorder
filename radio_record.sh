@@ -21,7 +21,8 @@ if [ ! -d "$LOG_DIR" ] ; then
 fi
 
 TITLE=$NAME`date "+_%Y.%m.%d"`
-RECORD_FILE=$RECORD_DIR/$NAME`date +_%Y%m%d`.m4a
+#RECORD_FILE=$RECORD_DIR/$NAME`date +_%Y%m%d`.m4a
+RECORD_FILE=$RECORD_DIR/$NAME`date +_%Y%m%d`.mp3
 LOG_FILE=$LOG_DIR/$NAME".log"
 
 # To renew the log file
@@ -40,4 +41,5 @@ log LOG_FILE $LOG_FILE
 log CMD "$FFMPEG -i $URL -t $SECS -codec:a copy -vn -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE""
 log "-----"
 
-$FFMPEG -i $URL -t $SECS -codec:a copy -vn -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE" >> $LOG_FILE 2>&1
+#$FFMPEG -i $URL -t $SECS -codec:a copy -vn -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE" >> $LOG_FILE 2>&1
+$FFMPEG -i $URL -t $SECS -vn -acodec mp3 -metadata title="$TITLE" -metadata date=`date +%F` "$RECORD_FILE" >> $LOG_FILE 2>&1
